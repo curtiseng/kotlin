@@ -5,6 +5,13 @@ class CraneEntity(private var id: String) {
     lateinit var type: CraneType
 
     override fun toString(): String {
-        return "{\n\tid=$id\n\tname=$name\n\ttype=$type\n}"
+        // Elvis 表达式 if (name != null) name.length else null
+        return """
+            {
+                id = $id,
+                name = ${name?.length ?: "null"},
+                type = $type
+            }
+        """.trimIndent()
     }
 }

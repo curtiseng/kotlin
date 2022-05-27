@@ -1,6 +1,9 @@
+import basic.BasicObject
+
 fun main() {
-    val craneService = CraneServiceImpl()
-    craneService.getCrane()
+    val craneService = BasicObject.craneService
+    val crane  = craneService.getCrane()
+    println("$crane")
     craneService.default()
     craneService.needImpl()
 }
